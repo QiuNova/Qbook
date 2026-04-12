@@ -1,7 +1,7 @@
 @echo off
 chcp 65001 >nul
 echo ========================================
-echo   Qbook 打包工具
+echo   iWorks 打包工具
 echo ========================================
 
 :: 检查 Python
@@ -26,17 +26,17 @@ pip show fonttools >nul 2>&1 || pip install fonttools
 
 :: 打包
 echo [2/3] 开始打包...
-pyinstaller --onefile --windowed --name "Qbook" --add-data "toolkit.html;." server.py
+pyinstaller --onefile --windowed --name "iWorks" --add-data "toolkit.html;." server.py
 
 :: 清理
 echo [3/3] 清理临时文件...
 if exist build rmdir /s /q build
-if exist Qbook.spec del /f Qbook.spec
+if exist iWorks.spec del /f iWorks.spec
 
 echo.
 echo ========================================
 echo   打包完成！
-echo   输出文件: dist\Qbook.exe
+echo   输出文件: dist\iWorks.exe
 echo ========================================
 echo.
 pause
